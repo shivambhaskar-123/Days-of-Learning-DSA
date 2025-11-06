@@ -219,4 +219,82 @@ function reverseStarPattern(n) {
     }
 }
 
-reverseStarPattern(5);
+// reverseStarPattern(5);
+
+// ******************************************************
+
+
+/**
+ * 
+ Print this pattern
+---------
+1
+1 0
+1 0 1
+1 0 1 0
+1 0 1 0 1
+----------
+ */
+
+function printZeroOnesPattern(n) {
+    for (let i = 1; i <= n; i++) {
+        let row = '';
+        for (let j = 1; j <= i; j++) {
+            row = row + (j % 2);
+        }
+        console.log(row)
+    }
+}
+
+// printZeroOnesPattern(5);
+
+function printPatternAnotherWay(n) {
+    for (let i = 0; i < n; i++) {
+        let toggle = 1;
+        let row = '';
+        for (let j = 0; j <= i; j++) {
+            row = row + toggle;
+            if (toggle === 1)
+                toggle = 0;
+            else
+                toggle = 1;
+        }
+        console.log(row);
+    }
+}
+printPatternAnotherWay(5)
+
+
+// ******************************************************
+
+
+/**
+ * 
+ Print this pattern
+---------
+1
+0 1
+0 1 0
+1 0 1 0
+1 0 1 0 1
+----------
+ */
+
+function printPatternDiiferentWay(n) {
+
+    let toggle = 1;
+    //NOTE just make toggle variable out of loop so that ist does not initialise itself and keeps always switching in j loop;
+    for (let i = 0; i < n; i++) {
+
+        let row = '';
+        for (let j = 0; j <= i; j++) {
+            row = row + toggle;
+            if (toggle === 1)
+                toggle = 0;
+            else
+                toggle = 1;
+        }
+        console.log(row);
+    }
+}
+printPatternDiiferentWay(5)
